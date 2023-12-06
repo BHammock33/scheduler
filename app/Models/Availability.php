@@ -14,6 +14,7 @@ class Availability extends Model
     public bool $FullAvailable;
     public bool $NotAvailable;
     public string $FinalAvailable;
+    private $id;
 
     public function __construct(bool $AmAvailable, bool $PmAvailable, 
     bool $FullAvailable, bool $NotAvailable, string $FinalAvailable){
@@ -96,3 +97,7 @@ class Availability extends Model
         return $this->belongsTo(Day::class);
     }
 }
+//one user id attatched to one of 7 day ids, each day id attatched to many availability
+//ids (user tied to availability through day)
+//is it easier to make day an attribute of availability, so one server to many availabilites?
+// is it better to just availabilty have 7 properties (1 for each day with a 0-3 value?)
