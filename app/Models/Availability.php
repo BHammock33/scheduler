@@ -8,7 +8,108 @@ use Illuminate\Database\Eloquent\Model;
 class Availability extends Model
 {
     use HasFactory;
+    public int $Monday;
+    public int $Tuesday;
+    public int $Wendesday;
+    public int $Thursday;
+    public int $Friday;
+    public int $Saturday;
+    public int $Sunday;
 
+    public function __construct($Monday, $Tuesday, $Wendesday, $Thursday, $Friday, $Saturday, $Sunday)
+    {
+        $this->Monday = $Monday;
+        $this->Tuesday = $Tuesday;
+        $this->Wendesday = $Wendesday;
+        $this->Thursday = $Thursday;
+        $this->Friday = $Friday;
+        $this->Saturday = $Saturday;
+        $this->Sunday = $Sunday;
+    }
+    
+    public function getMonday()
+    {
+        return $this->Monday;
+    }
+
+    public function setMonday($Monday)
+    {
+        $this->Monday = $Monday;
+
+        return $this;
+    }
+
+    public function getTuesday()
+    {
+        return $this->Tuesday;
+    }
+
+    public function setTuesday($Tuesday)
+    {
+        $this->Tuesday = $Tuesday;
+
+        return $this;
+    }
+
+    public function getWendesday()
+    {
+        return $this->Wendesday;
+    }
+
+    public function setWendesday($Wendesday)
+    {
+        $this->Wendesday = $Wendesday;
+
+        return $this;
+    }
+
+    public function getThursday()
+    {
+        return $this->Thursday;
+    }
+
+    public function setThursday($Thursday)
+    {
+        $this->Thursday = $Thursday;
+
+        return $this;
+    }
+
+    public function getFriday()
+    {
+        return $this->Friday;
+    }
+
+    public function setFriday($Friday)
+    {
+        $this->Friday = $Friday;
+
+        return $this;
+    }
+
+    public function getSaturday()
+    {
+        return $this->Saturday;
+    }
+
+    public function setSaturday($Saturday)
+    {
+        $this->Saturday = $Saturday;
+
+        return $this;
+    }
+    public function getSunday()
+    {
+        return $this->Sunday;
+    }
+
+    public function setSunday($Sunday)
+    {
+        $this->Sunday = $Sunday;
+
+        return $this;
+    }
+    /* 
     public bool $AmAvailable;
     public bool $PmAvailable;
     public bool $FullAvailable;
@@ -93,7 +194,9 @@ class Availability extends Model
     function get_FinalAvailable(){
         return $this->FinalAvailable;
     }
-    public function day(){
+    */
+    public function day()
+    {
         return $this->belongsTo(Day::class);
     }
 }
