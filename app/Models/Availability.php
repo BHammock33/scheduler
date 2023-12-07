@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Availability extends Model
 {
     use HasFactory;
+
+    //protected $fillable = ['monday', 'tuesday'. etc]
+    //scopefilter ($query, array $filters)
     public int $Monday;
     public int $Tuesday;
     public int $Wendesday;
